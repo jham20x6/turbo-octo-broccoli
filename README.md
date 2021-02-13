@@ -7,5 +7,5 @@ Build Instructions:
 - class usage
 
 How to test:
-
+- include test files and input files
 
