@@ -1,2 +1,11 @@
 # turbo-octo-broccoli
-Keep coding, definitely eat your vegetables
+Randomly Generated repo name.  Eat your vegetables.
+
+Build Instructions:
+- python
+- the library
+- class usage
+
+How to test:
+- include test files and input files
+
