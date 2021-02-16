@@ -1,40 +1,53 @@
 import simplejson as json
+import threading
 
 class ActionTracker(object):
 
     def __init__(self):
+        '''
+        Lock to later ensure 'self' data is multithreading-safe
+        Dictionary for actions, format given below in addAction
+        '''
+        self.lock = threading.Lock()
         self.actions = {}
-        #Format of input JSON string {"action":"jump", "time":100}
-        #TODO: add a check for this format
   
-    def addAction(self, jsonString):
-        #Check if string is valid JSON.  parsedObj is populated if successful)
+    def addAction(self, json_string):
+        '''
+        Validate JSON format via json.loads
+        Store the parsed_object on success, or return error
+        Format of input json_string is {"action":"jump", "time":100}
+        Acquire lock when accessing 'self' data
+        Increment existing action times by the new time
+        Add any new action, format: { action_key : { total_time: #,  count: # } }
+        Release lock when done accessing 'self' data
+        Return the error from the failed json.loads() attempt
+        '''
         try:
-            #validate JSON format via json.loads
-            #store object on success or return error
-            parsedObj = json.loads(jsonString)
-            #TODO: Verify that format here. We at least need action and time as first two items            
-            actionKey = parsedObj['action']
-            
-            if actionKey in self.actions:
-                #Increment existing action times by the new time field
-                self.actions[actionKey]['total_time'] += parsedObj['time']
-                self.actions[actionKey]['count'] += 1
+            parsed_object = json.loads(json_string)            
+            action_key = parsed_object['action']        
+            self.lock.acquire()
+            if action_key in self.actions:
+                self.actions[action_key]['total_time'] += parsed_object['time']
+                self.actions[action_key]['count'] += 1
             else:
-                #Add any new action
-                #Action dictionary format { action : { total_time: t,  count: c } }
-                self.actions[actionKey] = { "total_time":parsedObj['time'],"count":1 }
-
+                self.actions[action_key] = { "total_time": parsed_object['time'], "count":1 }
+            self.lock.release()
         except ValueError as e:
-            #return the error from the failed json.loads() attempt
             return(e)
 
     def getStats(self):
-        #Format of output needs to be list of actions and average times.
-        #example: [ {"action": "action1", "avg": 10}, {"action": "action2", "avg": 20 } ]
-        activityStats = []
-        for actionKey in self.actions:
-            #build dictionary pairs for the output
-            #Assumption: Average needs to only be in whole numbers, type cast as int
-            activityStats.append({"action": actionKey, "avg" : (int(self.actions[actionKey]['total_time'] / self.actions[actionKey]['count'])) })
-        return json.dumps(activityStats)
+        '''
+        Format of output needs to be JSON serialized list of actions and average times.
+        Example: [ {"action": "action1", "avg": 10}, {"action": "action2", "avg": 20 } ]
+        Acquire lock when accessing 'self' data
+        Build dictionary pairs for each action
+        Assumption: Average needs to only be in whole numbers, so use round() 
+        Release lock when done accessing 'self' data
+        Return JSON serialized results with json.dumps
+        '''
+        action_stats = []
+        self.lock.acquire()
+        for action_key in self.actions:       
+            action_stats.append({"action": action_key, "avg" : (round(self.actions[action_key]['total_time'] / self.actions[action_key]['count'])) })
+        self.lock.release()
+        return (json.dumps(action_stats))
