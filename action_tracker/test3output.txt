@@ -1,0 +1,1 @@
+[{"action":"jump", "avg":25575}, {"action":"run", "avg":150}]

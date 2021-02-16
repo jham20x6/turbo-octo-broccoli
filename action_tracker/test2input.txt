@@ -1,0 +1,15 @@
+{"action":"jump", "time":100}
+{"action":"run", "time":75}
+{"action":"jump", "time":200}
+{"action":"jog", "time":45}
+{"action":"jog", "time":45}
+{"action":"swim", "time":30}
+{"action":"swim", "time":60}
+{"action":"ride", "time":60}
+{"action":"ski", "time":30}
+{"action":"ride", "time":60}
+{"action":"bike", "time":55}
+{"action":"ski", "time":60}
+{"action":"run", "time":90}
+{"action":"bike", "time":120}
+{"action":"jog", "time":45}

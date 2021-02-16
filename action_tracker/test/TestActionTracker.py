@@ -23,11 +23,11 @@ class TestActionTracker(unittest.TestCase):
     
     def testAddAction(self):
         
-        result = self.action_tracker.addAction(jsonString='{"action":"jump", "time":100}')
+        result = self.action_tracker.addAction(json_string='{"action":"jump", "time":100}')
         self.assertEqual(result, None, "Add Action Failed")
-        result = self.action_tracker.addAction(jsonString='{"action":"run", "time":75}')
+        result = self.action_tracker.addAction(json_string='{"action":"run", "time":75}')
         self.assertEqual(result, None, "Add Action Failed")
-        result = self.action_tracker.addAction(jsonString='{"action":"jump", "time":200}')
+        result = self.action_tracker.addAction(json_string='{"action":"jump", "time":200}')
         self.assertEqual(result, None,"Add Action Failed")
                 
     def testGetStats(self):
