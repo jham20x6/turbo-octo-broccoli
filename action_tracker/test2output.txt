@@ -1,1 +1,0 @@
-[{"action":"jump", "avg":150}, {"action":"run", "avg":82},{"action":"jog", "avg":45},{"action":"swim", "avg":45},{"action":"ride","avg":60},{"action":"ski","avg":45},{"action":"bike","avg":88}]
