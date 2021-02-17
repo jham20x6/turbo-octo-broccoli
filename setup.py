@@ -8,5 +8,6 @@ setup(
 	author_email='jeff.m.hamlin@gmail.com',
 	url='https://github.com/jham20x6/turbo-octo-broccoli.git',
 	license='MIT',
+	install_requires=["simplejson>=3.16.0"]
 	packages=find_packages(exclude=['*.test*'])
 )	
