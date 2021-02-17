@@ -1,3 +1,10 @@
+'''
+Created on Feb 13, 2021
+
+@author: jeff
+Description: A small class to record actions/activities and times, and retrieve their average times.
+'''
+
 import simplejson as json
 import threading
 
