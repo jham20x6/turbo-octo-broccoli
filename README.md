@@ -11,13 +11,14 @@ Written in python (version 3.8)
 	windows :`py -m pip --version`
 	unix/mac:`pip --version`
 - Otherwise [install pip](https://pip.pypa.io/en/stable/installing/)
-2. Install the library:
+2. [Install git if needed](https://git-scm.com/downloads) 
+3. Install the library:
 `pip install git+https://github.com/jham20x6/turbo-octo-broccoli.git@main`
 
 ##### Usage Example:
 
 ```
-python
+python3
 >>>import action_tracker as at
 >>> my_at = at.ActionTracker()
 >>> my_at.addAction('{"action":"jump", "time":200}')
