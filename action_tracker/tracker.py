@@ -23,15 +23,18 @@ class ActionTracker(object):
         Return the error from the failed json.loads() attempt
         '''
         try:
-            parsed_object = json.loads(json_string)            
-            action_key = parsed_object['action']        
-            self.lock.acquire()
-            if action_key in self.actions:
-                self.actions[action_key]['total_time'] += parsed_object['time']
-                self.actions[action_key]['count'] += 1
+            parsed_object = json.loads(json_string)
+            if (isinstance(parsed_object['action'],str) and isinstance(parsed_object['time'],int)):   
+                action_key = parsed_object['action']        
+                self.lock.acquire()
+                if action_key in self.actions:
+                    self.actions[action_key]['total_time'] += parsed_object['time']
+                    self.actions[action_key]['count'] += 1
+                else:
+                    self.actions[action_key] = { "total_time": parsed_object['time'], "count":1 }
+                    self.lock.release()
             else:
-                self.actions[action_key] = { "total_time": parsed_object['time'], "count":1 }
-            self.lock.release()
+                return("Error: Invalid Data")
         except ValueError as e:
             return(e)
 
