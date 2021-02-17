@@ -32,7 +32,7 @@ class ActionTracker(object):
                     self.actions[action_key]['count'] += 1
                 else:
                     self.actions[action_key] = { "total_time": parsed_object['time'], "count":1 }
-                    self.lock.release()
+                self.lock.release()
             else:
                 return("Error: Invalid Data")
         except ValueError as e:
