@@ -1,10 +1,11 @@
 ### turbo-octo-broccoli 
 *Randomly generated repo name.  Eat your vegetables.*
-
+___
 #### Description:
 This small class library is for recording activities and times, and retrieving their averages.
 Written in python (version 3.8)
-##### To install the library:
+___
+#### To install the library:
 1. [install python3.8 or higher](https://www.python.org/downloads/)
 - This install should include **pip**, a Python package installer
 - Verify pip is installed (version 21.0.1 for me): 
@@ -14,8 +15,8 @@ Written in python (version 3.8)
 2. [Install git if needed](https://git-scm.com/downloads) 
 3. Install the library:
 `pip install git+https://github.com/jham20x6/turbo-octo-broccoli.git@main`
-
-##### Usage Example:
+___
+#### Usage Example:
 *for windows use 'py' instead of 'python3'*
 ```
 python3
@@ -27,8 +28,8 @@ python3
 '[{"action": "jump", "avg": 150}]'
 >>> 
 ```
-##### To uninstall the library:
+#### To uninstall the library:
 `pip uninstall jc_ActionsJH`
-
-##### Extras:
-'test' directory in repository has artifacts from testing.
+___
+#### Extras:
+['test'](https://github.com/jham20x6/turbo-octo-broccoli/tree/main/action_tracker/test) directory in repository has artifacts from testing.
