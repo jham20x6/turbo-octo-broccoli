@@ -16,7 +16,7 @@ Written in python (version 3.8)
 `pip install git+https://github.com/jham20x6/turbo-octo-broccoli.git@main`
 
 ##### Usage Example:
-
+*for windows use 'py' instead of 'python3'*
 ```
 python3
 >>>import action_tracker as at
