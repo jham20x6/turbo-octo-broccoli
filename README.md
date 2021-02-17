@@ -1,7 +1,7 @@
 ### turbo-octo-broccoli 
 *Randomly generated repo name.  Eat your vegetables.*
 
-This small class library is for recording activities and times, and retreiving their averages.
+This small class library is for recording activities and times, and retrieving their averages.
 Written in python (version 3.8)
 ##### To install the library:
 `pip install git+https://github.com/jham20x6/turbo-octo-broccoli.git@main`
