@@ -16,13 +16,14 @@ ___
 *for windows use 'py' instead of 'python3'*
 ```
 python3
->>>import action_tracker as at
+>>> import action_tracker as at
 >>> my_at = at.ActionTracker()
->>> my_at.addAction('{"action":"jump", "time":200}')
 >>> my_at.addAction('{"action":"jump", "time":100}')
+>>> my_at.addAction('{"action":"run", "time":75}')
+>>> my_at.addAction('{"action":"jump", "time":200}')
 >>> my_at.getStats()
-'[{"action": "jump", "avg": 150}]'
->>> 
+'[{"action": "jump", "avg": 150}, {"action": "run", "avg": 75}]'
+>>>
 ```
 #### To uninstall the library:
 `pip uninstall jc_ActionsJH`
