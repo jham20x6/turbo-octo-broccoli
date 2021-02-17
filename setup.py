@@ -1,6 +1,5 @@
 from setuptools import setup, find_packages
 
-
 setup(
 	name='jc_ActionsJH',
 	version='1.0.0',
