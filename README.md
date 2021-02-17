@@ -6,14 +6,14 @@ This small class library is for recording activities and times, and retrieving t
 Written in python (version 3.8)
 ___
 #### To install the library:
-1. [install python3.8 or higher](https://www.python.org/downloads/)
-- This install should include **pip**, a Python package installer
-- Verify pip is installed (version 21.0.1 for me): 
-	windows :`py -m pip --version`
-	unix/mac:`pip --version`
-- Otherwise [install pip](https://pip.pypa.io/en/stable/installing/)
-2. [Install git if needed](https://git-scm.com/downloads) 
-3. Install the library:
+1. Verify python 3.8 or higher is installed by trying `python` at the command prompt
+- If needed, [install python3.8 or higher](https://www.python.org/downloads/)
+	- This install should include **pip**, a Python package installer
+2. Verify pip is installed (version 21.0.1 for me): 
+	- **windows:**`py -m pip --version` or **unix/mac:**`pip --version`
+- If needed, [install pip](https://pip.pypa.io/en/stable/installing/)
+3. [Install git if needed](https://git-scm.com/downloads) 
+4. Install the library:
 `pip install git+https://github.com/jham20x6/turbo-octo-broccoli.git@main`
 ___
 #### Usage Example:
