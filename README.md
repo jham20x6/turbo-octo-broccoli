@@ -6,7 +6,7 @@ Written in python (version 3.8)
 ##### To install the library:
 `pip install git+https://github.com/jham20x6/turbo-octo-broccoli.git@main`
 
-##### Usage:
+##### Usage Example:
 
 ```
 python
@@ -18,6 +18,8 @@ python
 '[{"action": "jump", "avg": 150}]'
 >>> 
 ```
+##### To uninstall the library:
+`pip uninstall jc_ActionsJH`
 
 ##### Extras:
 'test' directory in repository has artifacts from testing.
