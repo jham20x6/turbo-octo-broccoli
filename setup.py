@@ -1,5 +1,5 @@
-from setuptools import find_packages
-from setuptools import setup
+from setuptools import setup, find_packages
+
 
 setup(
 	name='jc_ActionsJH',
@@ -8,5 +8,6 @@ setup(
 	author='Jeffrey Hamlin',
 	author_email='jeff.m.hamlin@gmail.com',
 	url='https://github.com/jham20x6/turbo-octo-broccoli.git',
+	license='MIT',
 	packages=find_packages(exclude=['*.test*'])
 )	
